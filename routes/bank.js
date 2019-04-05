@@ -16,7 +16,6 @@ routes.get("/bank",middleware.isLoggedIn,function(req,res){
         }
         else{
              allbranch = [];
-             console.log(foundAccount.length);
             for(var i=0; i<foundAccount.length ; i=i+1){
                 var z = 0;
                 branch.findOne({b_id: foundAccount[i].b_id},function(err,foundBranch){
@@ -25,7 +24,6 @@ routes.get("/bank",middleware.isLoggedIn,function(req,res){
                         res.redirect("/home")
                     }
                     else{
-                        console.log(z);
                         allbranch.push(foundBranch);
                         if(z++ === foundAccount.length - 1){
                             res.render("bank/home.ejs",{foundAccount: foundAccount, foundBranch: allbranch});

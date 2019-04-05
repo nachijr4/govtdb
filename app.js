@@ -48,7 +48,7 @@ app.use(details);
 app.use(bank);
 app.use(bank_transfer);
 //------------------------------------------------------
-app.listen(9000,console.log("The govtdb has started at 9000"));
+app.listen(process.env.port);
 
 
 

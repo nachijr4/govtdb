@@ -106,12 +106,10 @@ routes.post("/bank/:id/verifyotp",middleware.isLoggedIn,function(req,res){
         var sender,receiver;
         accounts.findOne({a_id: req.query.s_id},function(err,foundSender){
             if(err){console.log(err);}
-            else{ sender = foundSender; console.log("Found sender")}
-        });
+            else{ sender = foundSender; 
         accounts.findOne({a_id: req.query.r_id},function(err,foundreceiver){
             if(err){console.log(err);}
-            else{ receiver = foundreceiver; console.log("Found Receiver")}
-        });
+            else{ receiver = foundreceiver; 
         let now = new Date();
         req.query.createdAt = String(now).substring(0,24);
         transactions.create(req.query,function(err,createdTransaction){
@@ -130,6 +128,10 @@ routes.post("/bank/:id/verifyotp",middleware.isLoggedIn,function(req,res){
                  res.redirect("/bank");
             }
         })
+    }
+});
+            }
+        });
     }
     else{
         req.flash("error","Wrong OTP. ")
