@@ -139,7 +139,7 @@ routes.post("/bank/:id/verifyotp",middleware.isLoggedIn,function(req,res){
 // ------------------------------------------------------------------------------------------------
 
 //----------------------------------Generating OTP and sending mail--------------------------
- function sendmail(receiver_mail){
+ async function sendmail(receiver_mail){
     let transporter = nodemailer.createTransport({
         host: "smtp.gmail.com",
         port: 587,
