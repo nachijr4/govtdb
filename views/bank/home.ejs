@@ -1,0 +1,62 @@
+<% include ../partials/header.ejs%>
+
+<link rel="stylesheet" href="/stylesheets/bank/home.css">
+
+<% if(success !=""){%>
+    <div style="margin: 0 3%;">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                     Transaction Successful! <%= success %>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+    </div>
+  <%}%>
+
+  <% if(error !=""){%>
+    <div style="margin: 0 3%;">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Transaction Failed! </strong> <%= error %>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+    </div>
+  <%}%>
+
+<div class="row">
+    <% var i = 0; foundAccount.forEach(function(account){ i= i+1;%>
+        <div class="col-md-6 col-lg-4 col-12">
+            <div class="card m-2">
+                <!-- <div class="card-header text-center">
+                    Account  <%= i %>        
+                </div> -->
+                <div class="card-image">
+                    <img src="<%= foundBranch[i-1].image %>" alt="Bank Image Comes here">
+                </div>
+                <!-- <hr> -->
+                <div class="card-body ">
+                    <div class="d-block p-2">
+                        Bank Name: <%= foundBranch[i-1].bank_name %>
+                    </div>
+                    <div class="d-block p-2">
+                        Account Number: <%= account.a_id %>
+                    </div>
+                    <div class="d-block p-2">
+                        Balance:        <%= account.balance %>
+                    </div>
+                    <div class="card-link p-1 pl-2">
+                        <a href="/bank/<%= account.a_id %>" class="btn btn-info">Access Account</a>
+                    </div>
+
+                    <div class="card-link p-1 pl-2 ml-0">
+                        <a href="/bank/<%= account.a_id %>/transfer" class="btn btn-warning">Transfer Funds</a>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    <%});%>
+</div>
+
+<% include ../partials/footer.ejs%>

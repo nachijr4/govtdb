@@ -1,0 +1,28 @@
+<% include ../partials/header.ejs %>
+
+<link rel="stylesheet" href="/stylesheets/viewpassport.css">
+
+<div class="container">
+
+  <div class="card">
+    <div class="card-header">
+      Passport
+    </div>
+    <div class="card-image">
+      <img src="<%= currentUser.image %>" alt=" pass Image">
+    </div>
+
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">  Passport Number: <%= foundpass %></li>
+    <li class="list-group-item">Name: <%= currentUser.name %></li>
+    <li class="list-group-item">Address: <%= currentUser.address %></li>
+    <li class="list-group-item">Dob: <%= currentUser.dob %></li>
+    <li class="list-group-item">  Phone: <%= currentUser.p_no %></li>
+    <li class="list-group-item">Email: <%= currentUser.email %></li>
+    <li class="list-group-item">  Sex: <%= currentUser.sex %></li>
+  </ul>
+
+</div>
+
+
+<% include ../partials/footer.ejs %>

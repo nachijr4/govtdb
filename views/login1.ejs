@@ -1,0 +1,36 @@
+<% include partials/header.ejs %>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/login1.css">
+    <div class="header">
+    <p>Welcome To GovtDB</p>
+    <hr>
+</div>
+<form action="/login" method="post">
+    <div id="cubelogincontainer">
+        <div id="cube">
+            <div class="cubeback" id="logintext">
+            <span class="logintext" onclick="show('username');">L O G I N</span>
+            </div>
+            <div class="cf" id="username">
+                <input  id="ut" type="text" class="tb dark" name="username" placeholder="U S E R  N A M E" />
+                <div class="downb"><img onclick="show('password');" src="darkdown.png" height="30" width="30"></div></div>
+            <div class="cf" id="password">
+                <input type="password" class="tb" name="password" placeholder="P A S S W O R D" />
+                <div class="downb GO"><img onclick="show('blank');" src="down.png" height="30" width="30"></div>
+            </div>
+            <div class="cf" id="blank">
+                <button>
+                    <span class="logintext dark">S U B M I T</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</form>
+<script type="text/javascript">
+	function show(x)
+	{
+		document.getElementById('cube').className="show"+x;
+	}
+</script>
+</body>
+</html>

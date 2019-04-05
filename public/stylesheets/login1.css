@@ -1,0 +1,191 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+body,html
+{
+	/* background-color: #bb5414b5; */
+	background-image: url("https://i.pinimg.com/originals/50/70/a0/5070a053a63adda228049e4177a496f5.jpg");
+	/* background-position: center; */
+	background-size: 1536px 850px;
+	background-repeat: no-repeat;
+	cursor: default;
+}
+#cubelogincontainer
+{
+	width: 450px;
+	height: 100px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	perspective: 500px;
+	transform:translate(-50%,-50%);
+	animation-name: opentrans;
+	animation-duration: 1.5s;
+}
+#cube
+{
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	transition: transform 1s;
+
+}
+#logintext
+{
+	position: absolute;
+	width: 450px;
+	height: 70px;
+	transform: rotateX(0deg) translateZ(35px);
+	background-color: rgb(45,45,45);
+	
+}
+#logintext:hover
+{
+	transition: 0.8s;
+	box-shadow: 0 10px 35px rgba(0, 0, 0, .2);
+}
+#username
+{
+	position: absolute;
+	width: 450px;
+	height: 70px;
+	transform: rotateX(90deg) translateZ(35px);
+	background-color: #F2EFE9;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, .2);
+}
+#password
+{
+	position: absolute;
+	width: 450px;
+	height: 70px;
+	transform: rotateX(180deg) translateZ(35px);
+	background-color: rgb(45,45,45);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, .2);
+}
+#blank
+{
+	position: absolute;
+	width: 450px;
+	height: 70px;
+	transform: rotateX(-90deg) translateZ(35px);
+	background-color: #F2EFE9;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, .2);
+}
+.showblank
+{
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	transition: transform 1s;
+	transform: translateZ(-35px) rotateX(90deg);
+}
+.showpassword
+{
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	transition: transform 1s;
+	transform: translateZ(-35px) rotateX(-180deg);
+}
+.showusername
+{
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	transition: transform 1s;
+	transform: translateZ(-35px) rotateX(-90deg);
+}
+.showlogintext
+{
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	transition: transform 1s;
+	transform: translateZ(-35px) rotateX(-0deg);
+}
+.tb
+{
+	border:none;
+	height: 98%;
+	width: 80%;
+	color: white;
+	font-size: 140%;
+	font-family: sans-serif;
+	padding-left: 10px;
+	background-color: transparent;
+	vertical-align: middle;
+}
+input::placeholder
+{
+	color: white;
+	font-size: 120%;
+	font-family: sans-serif;
+	padding-left: 10px;
+}
+.logintext
+{
+	color: white;
+	font-family: sans-serif;
+	font-size: 140%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	font-weight: bolder;
+	transform: translate(-50%,-50%);
+}
+#ut::placeholder
+{
+	color: rgb(45,45,45);
+	font-size: 120%;
+	font-family: sans-serif;
+	padding-left: 10px;
+}
+.dark
+{
+	color: rgb(45,45,45);
+}
+.downb
+{
+	position: absolute;
+	left: 90%;
+	right: 10px;
+	height: 100%;
+	width: 30px;
+	display: inline;
+	top: 20px;
+	vertical-align: middle;
+}
+.GO img
+{
+	transform: rotate(-90deg);
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+@keyframes opentrans
+{
+	0%{top:150%;}
+	100%{top:50%;}
+}
+
+h1{
+	margin-top: 13%;
+	margin-left: 37%;
+	font-size: 45px;
+}
+
+hr{
+	margin: 10px 30%;
+}
+
+.header p{
+	color: rgb(255,255,255);
+	padding-top: 9%;
+	margin-left: 37%;
+	font-size: 45px;
+}

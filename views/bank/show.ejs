@@ -1,0 +1,97 @@
+<% include ../partials/header.ejs %>
+
+<link rel="stylesheet" href="/stylesheets/bank/show.css">
+
+<div class="row">
+    <div class="col-md-4 pr-0">
+        <div>
+            <img src="<%= foundBranch.image%>" alt="" style="width: 100%; height: 100%;">
+        </div>
+
+    </div>
+    
+    <div class="col-md-8">
+        
+        <% if(success !=""){%>
+            <div class="container">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <%= success %>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <%}%>
+                            
+                            <% if(error !=""){%>
+                                <div class="container">
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        <strong>Transaction Failed! </strong> <%= success %>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <%}%>
+                                
+        <div>
+            <h1>Account Details:</h1>
+        </div>
+
+        <div>
+            Account Number: <%= account.a_id %>
+        </div>
+
+        <div>
+            Branch: <%= account.b_id %>
+        </div>
+
+        <div>
+            IFSC: <%= foundBranch.ifsc %>
+        </div>
+
+        <div>
+            Branch : <%= foundBranch.manager_name %>
+        </div>
+
+        <div>
+            Balance: <%= account.balance %>
+        </div>
+
+        <div>
+            Minimum Balance: <%= account.min_balance %>
+        </div>
+
+        <div id="table" >
+            <table border=1>
+                <thead>
+                    <tr>
+                        <th>Sender's Acc_No</th>
+                        <th>Receiver's Acc_No</th>
+                        <th>Amount</th>
+                        <th>Type</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% account.transactions.forEach(function(transaction){ %>
+                        <tr>
+                                <td><%=transaction.details.s_id%></td>
+                                <td><%=transaction.details.r_id%></td>
+                                <td><%=transaction.details.amount%></td>
+                                <td><%=transaction.t%></td>
+                                <td><%= transaction.details.createdAt%></td>
+                        </tr>
+                   <% });%>
+                </tbody>
+            </table>
+        </div>
+        <a class="btn btn-primary" href="/bank">Back</a>
+    </div>
+</div>
+
+
+
+
+<% include ../partials/footer.ejs %>

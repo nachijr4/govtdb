@@ -1,0 +1,14 @@
+<% include ../partials/header.ejs %>
+
+<link rel="stylesheet" href="/stylesheets/bank/enterotp.css">
+
+<div class="container">
+    <form action="/bank/<%=trans_details.s_id%>/verifyotp?s_id=<%=trans_details.s_id%>&r_id=<%=trans_details.r_id%>&amount=<%=trans_details.amount%>&description=<%=trans_details.description%>" method="post">
+        <input class="form-control" type="text" name="otp" placeholder="Enter OTP">
+        <div>
+            <button class="btn btn-success">Verify</button>
+        </div>
+    </form>
+</div>
+
+<% include ../partials/footer.ejs %>

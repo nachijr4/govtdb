@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>3D BOX LOGIN</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div id="cubelogincontainer">
+	<div id="cube">
+		<div class="cubeback" id="logintext">
+		<span class="logintext" onclick="show('username');">L O G I N</span>
+		</div>
+		<div class="cf" id="username">
+			<input  id="ut" type="text" class="tb dark" name="" placeholder="U S E R  N A M E" />
+			<div class="downb"><img onclick="show('password');" src="darkdown.png" height="30" width="30"></div></div>
+		<div class="cf" id="password">
+			<input type="password" class="tb" name="" placeholder="P A S S W O R D" />
+			<div class="downb GO"><img onclick="show('blank');" src="down.png" height="30" width="30"></div>
+		</div>
+		<div class="cf" id="blank">
+			<span class="logintext dark">W E L C O M E</span>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	function show(x)
+	{
+		document.getElementById('cube').className="show"+x;
+	}
+</script>
+</body>
+</html>

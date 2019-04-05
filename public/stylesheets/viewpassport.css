@@ -1,0 +1,25 @@
+body{
+    background: url("https://images.unsplash.com/photo-1454496406107-dc34337da8d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1163&q=80");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .card{
+    margin-left: 350px;
+    margin-right: 350px;
+  }
+
+  img{
+    height: 250px;
+    width: 408px;
+  }
+  .card-header{
+    text-align: center;
+  }
+
+  .card{
+    font-family: 'Dancing Script', cursive; 
+    font-weight: bold;
+    font-size: 20px;
+  }

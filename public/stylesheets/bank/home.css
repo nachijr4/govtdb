@@ -1,0 +1,24 @@
+.card-body,.card-header{
+    font-weight: bold;
+}
+
+img{
+    width: 100%;
+    height:290px;
+}
+
+body{
+    background-image: url("https://www.hindustantimes.com/rf/image_size_960x540/HT/p2/2018/05/26/Pictures/aniruddha-chowdhury-mumbai-mumbai-headquarters-reserve-photo_44d27ea4-60b7-11e8-8da7-089610bcbead.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.card{
+    font-family: 'Dancing Script', cursive; 
+    font-weight: bold;
+    font-size: 25px;
+    background-color: rgba(255,255,255,0.6);
+}
+}
+

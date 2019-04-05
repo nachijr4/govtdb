@@ -1,0 +1,79 @@
+<% include ../partials/header.ejs %>
+
+
+
+<link rel="stylesheet" href="/stylesheets/bank/transfer.css">
+
+<div class="row">
+    <div class="col-md-5">
+        <div>
+            <img src="<%= branch.image %>" alt="">
+        </div>
+
+        <!-- <div>
+            Bank Name: <%=branch.bank_name %>
+        </div>
+
+        <div>
+            Account Number: <%= account.a_id %>
+        </div> -->
+    </div>
+
+    <div class="col-md-7" id="transparent">
+
+        <div class="container">
+                <% if(success !=""){%>
+                    <div style="margin: 0 3%;">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                     <%= success %>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                    </div>
+                  <%}%>
+    
+                  <% if(error !=""){%>
+                    <div style="margin: 0 3%;">
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>Transaction Failed! </strong> <%= error %>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                    </div>
+                  <%}%> 
+                    <form action="/bank/<%= account.a_id %>/transfer" method="post">
+                        <div class="d-none">
+                            <label for="account">From:</label>
+                            <p><%= account.a_id %></p>
+                        </div>
+            
+                        
+                        <div class="form-group">
+                            <label for="benifeciery">Benifeciery:</label>
+                            <input class="form-control" required type="text" id="benifeciery" name="benifeciery">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ifsc">IFSC:</label>
+                            <input class="form-control" required type="text" id="ifsc" name="ifsc">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="amount">Amount:</label>
+                            <input class="form-control" required type="number" id="amount" name="amount">
+                        </div>
+            
+                        <div class="form-group">
+                                <label for="description">Description:</label>
+                                <textarea class="form-control" required type="text" id="ifsc" name="description"></textarea>
+                        </div>
+            
+                        <button class="btn btn-info">Transfer</button>
+                    </form>
+                </div>
+    </div>
+</div>
+
+<% include ../partials/footer.ejs %>
