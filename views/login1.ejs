@@ -1,4 +1,8 @@
 <% include partials/header.ejs %>
+
+<% if(error !=""){%>
+    <div class="alert alert-danger" role="alert"><%=error%></div>
+  <%}%>
         <link rel="stylesheet" type="text/css" href="/stylesheets/login1.css">
     <div class="header">
     <p>Welcome To GovtDB</p>

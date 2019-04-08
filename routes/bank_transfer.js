@@ -49,8 +49,12 @@ routes.post("/bank/:a_id/transfer",middleware.isLoggedIn, function(req,res){
                                             if(Number(req.body.amount)<= Number(senderAccount.balance)){
 
                                                 //---------------------Sending OTP ---------------------------------------
-                                                sendmail(req.user.email);
-                                                console.log("The otp received back is : ", otp)
+                                                try{
+
+                                                    sendmail(req.user.email);
+                                                } catch(error){
+                                                    // console.log("The otp received back is : ", otp)
+                                                }
                                                 //------------------------------------------------------------------------------
                                                 // -----------------calling the ejs file for entering otp-------------------
                                                 var data = {
@@ -161,7 +165,13 @@ routes.post("/bank/:id/verifyotp",middleware.isLoggedIn,function(req,res){
     };
     
     // send mail with defined transport object
-    let info = await transporter.sendMail(mailOptions)
+    try{
+        let info = await transporter.sendMail(mailOptions)
+
+    }
+catch(error){
+    console.log(error);
+}
     
     // console.log("Message sent: %s", info.messageId);
     return ;

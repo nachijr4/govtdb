@@ -48,7 +48,8 @@ app.use(details);
 app.use(bank);
 app.use(bank_transfer);
 //------------------------------------------------------
-app.listen(process.env.PORT);
+// app.listen(process.env.PORT);
+app.listen(3000);
 
 
 
